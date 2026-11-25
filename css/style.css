@@ -1,0 +1,223 @@
+/* ==========================================================
+   Projeto Piauí  —  folha de estilo única das 5 páginas
+   Paleta: arquivo "Paleta de cores para o site do Piauí"
+   Proporção 60-30-10: areia/terracota, azul/verde, laranja
+   ========================================================== */
+
+/* ---------- 1. Cores (declaradas uma vez) ---------- */
+:root {
+  --cor-primaria: #A8442A;   /* Terracota Rupestre */
+  --cor-sec-1: #0E6E8C;      /* Azul Delta */
+  --cor-sec-2: #2F6B3A;      /* Verde Carnaúba */
+  --cor-destaque: #F28C1B;   /* Laranja Caju */
+  --cor-fundo: #F7EFE2;      /* Areia do Sertão */
+  --cor-texto: #2B2420;      /* Grafite Quente */
+  --cor-branco: #FFFFFF;     /* branco dos cartões e do texto sobre cores escuras */
+
+  /* Derivadas da paleta (misturas das cores acima) */
+  --cor-linha: color-mix(in srgb, var(--cor-texto) 18%, var(--cor-fundo));
+  --cor-texto-suave: color-mix(in srgb, var(--cor-texto) 78%, var(--cor-fundo));
+
+  --fonte-titulo: Georgia, "Times New Roman", serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --raio: 10px;
+  --largura: 1080px;
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font: 1.0625rem/1.65 var(--fonte-texto);
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--cor-sec-1); }
+a:hover { color: var(--cor-primaria); }
+:focus-visible { outline: 3px solid var(--cor-destaque); outline-offset: 3px; }
+.container {
+  width: min(100% - 2rem, var(--largura));
+  margin-inline: auto;
+}
+h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.2; text-wrap: balance; }
+h2 {
+  color: var(--cor-primaria);
+  border-left: 6px solid var(--cor-destaque);
+  padding-left: .75rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin: 0 0 1rem;
+}
+h3 { margin: 0 0 .4rem; font-size: 1.2rem; color: var(--cor-texto); }
+p { margin: 0 0 1rem; max-width: 68ch; }
+
+/* ---------- 3. Cabeçalho e menu (por cima da foto do banner) ---------- */
+.cabecalho {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  color: var(--cor-branco);
+}
+.cabecalho .container {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: .5rem 1.5rem;
+  padding-block: .9rem;
+}
+.logo {
+  font-family: var(--fonte-titulo); font-weight: 700; font-size: 1.6rem;
+  letter-spacing: .12em; color: var(--cor-branco); text-decoration: none;
+  text-shadow: 0 1px 6px color-mix(in srgb, var(--cor-texto) 70%, transparent);
+}
+.logo:hover { color: var(--cor-branco); }
+.logo small {
+  font: 400 .8rem var(--fonte-texto); letter-spacing: .04em;
+  display: block; opacity: .9;
+}
+.menu { display: flex; flex-wrap: wrap; gap: .25rem; list-style: none; margin: 0; padding: 0; }
+.menu a {
+  display: block; padding: .5rem .9rem; border-radius: 999px;
+  color: var(--cor-branco); text-decoration: none; font-weight: 600; font-size: .98rem;
+  text-shadow: 0 1px 4px color-mix(in srgb, var(--cor-texto) 80%, transparent);
+}
+.menu a[aria-current="page"] { text-shadow: none; }
+.menu a:hover { background: color-mix(in srgb, var(--cor-branco) 20%, transparent); color: var(--cor-branco); }
+.menu a[aria-current="page"] { background: var(--cor-destaque); color: var(--cor-texto); }
+
+/* ---------- 4. Banner com foto (todas as páginas) ---------- */
+.banner {
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+  min-height: clamp(460px, 82vh, 760px);
+  background: var(--cor-texto); color: var(--cor-branco);
+}
+.banner.interno { min-height: clamp(400px, 66vh, 600px); }
+.banner > img,
+.banner .mosaico {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+}
+/* Sombra no topo (menu legível) e embaixo (texto legível) */
+.banner::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--cor-texto) 72%, transparent) 0%, transparent 32%),
+    linear-gradient(to top, color-mix(in srgb, var(--cor-texto) 90%, transparent) 0%, transparent 68%);
+}
+.banner-texto {
+  position: relative; z-index: 2; width: 100%;
+  padding: 8rem 0 clamp(1.5rem, 5vw, 3.5rem);
+}
+.banner h1 {
+  font-size: clamp(2rem, 6vw, 3.6rem); margin: 0 0 .5rem;
+  text-shadow: 0 2px 12px color-mix(in srgb, var(--cor-texto) 60%, transparent);
+}
+.banner.interno h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); }
+.banner p {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem); max-width: 50ch; margin: 0 0 1.25rem;
+  text-shadow: 0 1px 8px color-mix(in srgb, var(--cor-texto) 70%, transparent);
+}
+.banner.interno p { margin: 0; }
+
+/* ---------- 5. Mosaico de fotos (banner da galeria) ---------- */
+.mosaico { display: grid; grid-template-columns: repeat(4, 1fr); }
+.mosaico img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 6. Seções, botões e cartões ---------- */
+main { padding-bottom: 3rem; }
+.secao { padding-block: clamp(2rem, 5vw, 3.5rem); }
+.secao + .secao { border-top: 1px solid var(--cor-linha); }
+.btn {
+  display: inline-block; padding: .75rem 1.4rem; border-radius: 8px;
+  background: var(--cor-destaque); color: var(--cor-texto);
+  font-weight: 700; text-decoration: none;
+}
+.btn:hover { background: var(--cor-texto); color: var(--cor-branco); }
+
+.grade { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.grade.larga { grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.cartao {
+  background: var(--cor-branco); border-radius: var(--raio); overflow: hidden;
+  border: 1px solid var(--cor-linha); display: flex; flex-direction: column; min-width: 0;
+}
+.cartao img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.cartao-corpo { padding: 1rem 1.1rem 1.25rem; display: flex; flex-direction: column; flex: 1; }
+.cartao-corpo p { margin: 0 0 .75rem; font-size: .98rem; }
+.cartao-corpo .btn { margin-top: auto; align-self: flex-start; font-size: .95rem; padding: .55rem 1.1rem; }
+.etiqueta {
+  display: inline-block; align-self: flex-start; margin-bottom: .5rem; padding: .15rem .65rem;
+  border-radius: 999px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--cor-branco); background: var(--cor-sec-2);
+}
+.etiqueta.azul { background: var(--cor-sec-1); }
+.etiqueta.terra { background: var(--cor-primaria); }
+
+.dividida { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center; }
+.dividida > * { min-width: 0; }
+.dividida img { border-radius: var(--raio); width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.legenda { font-size: .88rem; color: var(--cor-texto-suave); margin: .4rem 0 0; }
+
+.destaque-numero {
+  background: var(--cor-sec-2); color: var(--cor-branco);
+  border-radius: var(--raio); padding: 1.25rem 1.4rem;
+}
+.destaque-numero strong { display: block; font: 700 2.2rem var(--fonte-titulo); }
+
+/* ---------- 7. Tabela de dados (localização) ---------- */
+.tabela-rolagem { overflow-x: auto; border-radius: var(--raio); border: 1px solid var(--cor-linha); background: var(--cor-branco); }
+table { border-collapse: collapse; width: 100%; min-width: 480px; }
+caption { text-align: left; padding: .9rem 1rem; font-weight: 700; color: var(--cor-primaria); }
+th, td { padding: .7rem 1rem; text-align: left; border-top: 1px solid var(--cor-linha); vertical-align: top; }
+thead th { background: var(--cor-sec-1); color: var(--cor-branco); border-top: 0; }
+tbody th { width: 34%; color: var(--cor-primaria); }
+
+/* ---------- 7b. Mapa interativo (localização) ---------- */
+.mapa-botoes { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0 0 1rem; padding: 0; }
+.mapa-botoes .btn { padding: .55rem 1.1rem; font-size: .95rem; }
+.mapa {
+  border-radius: var(--raio); overflow: hidden;
+  border: 1px solid var(--cor-linha); background: var(--cor-branco);
+  aspect-ratio: 16 / 10; min-height: 360px;
+}
+.mapa iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+/* ---------- 8. Fauna ---------- */
+.animal .cartao-corpo dl { margin: 0; font-size: .92rem; color: var(--cor-texto-suave); }
+.animal dt { font-weight: 700; display: inline; color: var(--cor-texto); }
+.animal dd { display: inline; margin: 0; }
+
+/* ---------- 9. Galeria ---------- */
+.galeria { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.galeria figure { margin: 0; background: var(--cor-branco); border-radius: var(--raio); overflow: hidden; border: 1px solid var(--cor-linha); }
+.galeria img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .3s; }
+.galeria figure:hover img { transform: scale(1.03); }
+.galeria .moldura { overflow: hidden; }
+.galeria figcaption { padding: .7rem 1rem .9rem; font-size: .95rem; }
+.galeria figcaption strong { display: block; color: var(--cor-primaria); }
+.atalhos { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0 0 .5rem; padding: 0; }
+.atalhos .btn { padding: .55rem 1.1rem; font-size: .95rem; }
+.grupo-galeria {
+  font-size: 1.4rem; color: var(--cor-primaria);
+  margin: 2rem 0 1rem; padding-bottom: .4rem;
+  border-bottom: 2px solid var(--cor-linha);
+  scroll-margin-top: 1rem;
+}
+
+/* ---------- 10. Rodapé ---------- */
+.rodape { background: var(--cor-texto); color: var(--cor-fundo); padding-block: 2rem; font-size: .95rem; }
+.rodape .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
+.rodape p { margin: 0 0 .4rem; }
+.rodape a { color: var(--cor-destaque); }
+.rodape a:hover { color: var(--cor-branco); }
+.rodape ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
+
+/* ---------- 11. Responsivo ---------- */
+@media (max-width: 760px) {
+  .dividida { grid-template-columns: 1fr; }
+  .cabecalho .container { justify-content: center; text-align: center; }
+  .menu { justify-content: center; }
+  .banner-texto { padding-top: 12rem; }
+  .mosaico { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .galeria img { transition: none; }
+}

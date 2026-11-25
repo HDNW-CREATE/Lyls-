@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Localização · Projeto Piauí</title>
+  <meta name="description" content="Onde fica o Piauí, clima, como chegar e dados geográficos.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="index.html">Piauí<small>Arte, natureza e cultura</small></a>
+      <nav aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="curiosidades.html">Curiosidades</a></li>
+        <li><a href="localizacao.html" aria-current="page">Localização</a></li>
+        <li><a href="fauna.html">Fauna</a></li>
+        <li><a href="galeria.html">Galeria de imagens</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="banner interno" aria-label="Apresentação">
+      <img src="imagens/mapas/mapa-da-regiao.jpg" style="object-position: center 25%"
+           alt="Mão apontando um mapa do Brasil com o Piauí, o Maranhão, o Tocantins e a Bahia">
+      <div class="banner-texto">
+        <div class="container">
+          <h1>Localização</h1>
+          <p>Onde fica o Piauí e como chegar aos principais destinos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container dividida">
+        <div>
+          <h2>Onde fica</h2>
+          <p>O Piauí está no Nordeste do Brasil. Faz divisa com o Maranhão a oeste, o Ceará e Pernambuco a leste, a Bahia ao sul e o Tocantins a sudoeste. Ao norte, abre-se para o Oceano Atlântico.</p>
+          <p>A capital é Teresina, às margens do Rio Parnaíba. O estado é cortado por esse rio, que forma a divisa com o Maranhão e termina no delta.</p>
+        </div>
+        <figure style="margin:0">
+          <img src="imagens/paisagens/mirante-do-gritador.jpg" alt="Paredão de rocha coberto de mata no Mirante do Gritador, em Pedro II, com a planície ao fundo">
+          <figcaption class="legenda">O interior do estado é dominado pela Caatinga e pelo Cerrado. Na foto, o Mirante do Gritador, em Pedro II.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="secao" id="mapa-interativo">
+      <div class="container">
+        <h2>Mapa interativo</h2>
+        <p>Arraste o mapa para se mover e use o <strong>+</strong> e o <strong>−</strong> (ou a rodinha do mouse) para aproximar e afastar. Clique em um destino para ir direto até ele.</p>
+        <ul class="mapa-botoes" aria-label="Destinos no mapa">
+          <li><a class="btn" href="https://www.openstreetmap.org/export/embed.html?bbox=-46.5%2C-11.2%2C-39.9%2C-2.5&amp;layer=mapnik" target="mapa-piaui">Piauí inteiro</a></li>
+          <li><a class="btn" href="https://www.openstreetmap.org/export/embed.html?bbox=-42.92%2C-5.17%2C-42.68%2C-5.00&amp;layer=mapnik&amp;marker=-5.0892%2C-42.8019" target="mapa-piaui">Teresina</a></li>
+          <li><a class="btn" href="https://www.openstreetmap.org/export/embed.html?bbox=-43.02%2C-8.98%2C-42.22%2C-8.36&amp;layer=mapnik&amp;marker=-8.6677%2C-42.6207" target="mapa-piaui">Serra da Capivara</a></li>
+          <li><a class="btn" href="https://www.openstreetmap.org/export/embed.html?bbox=-41.85%2C-4.20%2C-41.57%2C-4.00&amp;layer=mapnik&amp;marker=-4.10%2C-41.71" target="mapa-piaui">Sete Cidades</a></li>
+          <li><a class="btn" href="https://www.openstreetmap.org/export/embed.html?bbox=-42.40%2C-3.05%2C-41.30%2C-2.55&amp;layer=mapnik&amp;marker=-2.80%2C-41.85" target="mapa-piaui">Delta do Parnaíba</a></li>
+        </ul>
+        <div class="mapa">
+          <iframe name="mapa-piaui" title="Mapa interativo do Piauí"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-46.5%2C-11.2%2C-39.9%2C-2.5&amp;layer=mapnik"
+                  allowfullscreen></iframe>
+        </div>
+        <p class="legenda">O mapa precisa de internet para aparecer. As linhas tracejadas mostram as divisas do estado. Mapa: © colaboradores do <a href="https://www.openstreetmap.org/#map=7/-7.2/-43.2" target="_blank" rel="noopener">OpenStreetMap</a> (clique para abrir em tela cheia).</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <h2>Dados geográficos</h2>
+        <div class="tabela-rolagem">
+          <table>
+            <caption>Piauí em resumo</caption>
+            <thead><tr><th scope="col">Item</th><th scope="col">Informação</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Região</th><td>Nordeste do Brasil</td></tr>
+              <tr><th scope="row">Capital</th><td>Teresina</td></tr>
+              <tr><th scope="row">Área</th><td>Cerca de 251 mil km²</td></tr>
+              <tr><th scope="row">Estados vizinhos</th><td>Maranhão, Ceará, Pernambuco, Bahia e Tocantins</td></tr>
+              <tr><th scope="row">Biomas</th><td>Caatinga, Cerrado e áreas de transição</td></tr>
+              <tr><th scope="row">Litoral</th><td>Cerca de 66 km, o menor do país</td></tr>
+              <tr><th scope="row">Principal rio</th><td>Parnaíba, que forma o delta</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <h2>Clima</h2>
+        <div class="grade">
+          <div class="cartao"><div class="cartao-corpo">
+            <span class="etiqueta terra">Interior</span>
+            <h3>Quente e semiárido</h3>
+            <p>No sertão, as chuvas se concentram nos primeiros meses do ano. O restante do ano é seco, com muito sol e noites mais amenas.</p>
+          </div></div>
+          <div class="cartao"><div class="cartao-corpo">
+            <span class="etiqueta azul">Litoral</span>
+            <h3>Tropical com brisa</h3>
+            <p>Perto do mar, os ventos constantes deixam o calor mais suave, e a umidade é maior.</p>
+          </div></div>
+          <div class="cartao"><div class="cartao-corpo">
+            <span class="etiqueta">Dica</span>
+            <h3>Quando visitar</h3>
+            <p>Na estação seca, as trilhas e os sítios arqueológicos ficam mais acessíveis. Leve água, chapéu e protetor solar.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <h2>Como chegar</h2>
+        <div class="tabela-rolagem">
+          <table>
+            <caption>Principais destinos (distâncias aproximadas)</caption>
+            <thead><tr><th scope="col">Destino</th><th scope="col">Cidade-base</th><th scope="col">Como chegar</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Serra da Capivara</th><td>São Raimundo Nonato</td><td>Cerca de 500 km de Teresina, por rodovia. Há voos para cidades da região.</td></tr>
+              <tr><th scope="row">Sete Cidades</th><td>Piracuruca</td><td>Cerca de 180 km de Teresina, por rodovia.</td></tr>
+              <tr><th scope="row">Delta do Parnaíba</th><td>Parnaíba</td><td>Cerca de 340 km de Teresina, por rodovia, ou de avião até a cidade.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="legenda">Confira rotas e horários atualizados antes de viajar.</p>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <p><strong>Projeto Piauí</strong> · Portal de turismo e cultura do Piauí</p>
+        <p>Projeto escolar feito com HTML e CSS.</p>
+      </div>
+      <ul aria-label="Páginas do site">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="curiosidades.html">Curiosidades</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="fauna.html">Fauna</a></li>
+        <li><a href="galeria.html">Galeria de imagens</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
